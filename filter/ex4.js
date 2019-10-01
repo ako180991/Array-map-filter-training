@@ -1,35 +1,28 @@
-/* Array.prototype.filter - Exercice 4
+/* Array.prototype.filter - Exercice 2
 
-Ecrire une fonction filterOnPrice, qui attend 2 arguments:
-1. Un tableau d'objets représentant des produits, chacun ayant deux propriétés:
-  - name
-  - price
-2. Un prix maximum
-
-La fonction doit renvoyer un tableau ne contenant que les produits ne dépassant pas le prix
-maximum.
+Ecrire une fonction getMultiplesOf qui reçoit deux arguments:
+1. un tableau de nombres.
+2. un nombre.
+En utilisant filter, elle doit renvoyer un tableau ne contenant que les
+nombres du 1er argument qui sont multiples du nombre passé en 2ème.
 
 Exemple d'entrée:
+  1er argument:  [-12, -10, -7, -1, 5, 8, 11, 15, 20, 27]
+  2ème argument: 5
 
-1. tableau de produits:
-[
-  { name: 'iPhone X', price: 1159 },
-  { name: 'Xiaomi Mi A2', price: 209 },
-  { name: 'Samsung Galaxy Note 9', price: 992 },
-  { name: 'Huawei P20', price: 480 },
-  { name: 'Huawei P20 Pro', price: 649 }
-]
-2. prix maximum: 500
+  Sortie attendue:
+  [-10, 5, 15, 20]
 
-Sortie attendue:
-  [
-    { name: 'Xiaomi Mi A2', price: 209 },
-    { name: 'Huawei P20', price: 480 }
-  ]
  */
 
-function filterOnPrice(products, maxPrice) {
+function getMultiplesOf(numbers, n) {
+  const multiple = numbers.filter(function(num) {
+    if (num % n === 0) {
+      return num;
+    }
+  })
+  return multiple;
 }
 
 // Ne pas modifier l'export
-module.exports = filterOnPrice;
+module.exports = getMultiplesOf;
