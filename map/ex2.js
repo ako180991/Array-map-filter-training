@@ -12,9 +12,9 @@ pour chaque objet d'entrée:
 OU
 - la chaîne "FOOD is not suitable for vegetarians"
 en fonction de la valeur de la propriété `isVegetarian`, en remplaçant FOOD
-par le nom du produit
+par le nom du produit*/
 
-Exemple d'entrée:
+const foods =
   [
     {
       food: 'Bacon',
@@ -33,6 +33,8 @@ Exemple d'entrée:
       isVegetarian: true
     }
   ]
+
+  /*
 En sortie: [
   'Bacon is not suitable for vegetarians',
   'Sausage is not suitable for vegetarians',
@@ -40,19 +42,26 @@ En sortie: [
   'Chick Pea is suitable for vegetarians'
 ]
 
+
  */
-foods = ['Bacon', 'Sausage', 'Tofu','Chick Pea'];
-isVegetarian = [true, true, false, false]
-const getFoodCategories = foods.map(function (food, isVegetarian) {
-  if (isVegetarian == true) {
-    return food + ' is suitale for vegetarians'
-  } else {
-    return food + ' is not suitable for vegetarians'
-  }
 
-})
+ 
 
-console.log(getFoodCategories)
+function getFoodCategories(foods) {
+  const chaine = foods.map(function(snack) {
+    if (snack.isVegetarian) {
+      return snack.food + ' is suitable for vegetarians';
+    } else {
+      return snack.food + ' is not suitable for vegetarians'
+    }
+  })
+  return chaine
+}
+
+
+
+// Ne pas modifier l'export
+module.exports = getFoodCategories;
 
   
 
